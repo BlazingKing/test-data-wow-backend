@@ -12,7 +12,6 @@ export class SupabaseService {
     );
   }
 
-  // ✅ Users
   async getUsers(): Promise<any> {
     const { data, error } = await this.supabase.from('users').select('*');
     if (error) throw new Error(error.message);
@@ -27,14 +26,12 @@ export class SupabaseService {
     return data;
   }
 
-  // ✅ Communities
   async getCommunities(): Promise<any> {
     const { data, error } = await this.supabase.from('communities').select('*');
     if (error) throw new Error(error.message);
     return data;
   }
 
-  // ✅ Posts
   async getPosts(): Promise<any> {
     const { data, error } = await this.supabase
       .from('posts')

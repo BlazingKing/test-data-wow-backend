@@ -5,7 +5,6 @@ import { SupabaseService } from './supabase.service';
 export class AppController {
   constructor(private readonly supabaseService: SupabaseService) {}
 
-  // ✅ Users API
   @Get('users')
   getUsers() {
     return this.supabaseService.getUsers();
@@ -16,13 +15,11 @@ export class AppController {
     return this.supabaseService.createUser(body.username);
   }
 
-  // ✅ Communities API
   @Get('communities')
   getCommunities() {
     return this.supabaseService.getCommunities();
   }
 
-  // ✅ Posts API
   @Get('posts')
   getPosts() {
     return this.supabaseService.getPosts();
